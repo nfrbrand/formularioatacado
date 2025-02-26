@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Visita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="foto/logo.jpg" alt="Imagem da escola" class="school-image">
+            <h1>Cadastro para Revenda NFR</h1>
+            <h2>Moda Country no Atacado</h2>
+            <p>Seja um revendedor autorizado da NFR! Preencha o formulário 
+                para analisarmos sua solicitação e darmos sequência 
+                ao seu cadastro. Após o envio, nossos representantes 
+                entrarão em contato para validar as informações e concluir a aprovação.
+
+            </p>
+            <p>⚠️ Importante: Este cadastro não garante aprovação imediata.
+                 Sua solicitação será analisada por nossa equipe e pelo representante da sua região.</p>
+        </div>
+        <div class="right-section">
+            <h2>Preencha o formulário e aguarde nosso contato!</h2>
+            <form method="post" action="" name="formulario-contato">
+                <!-- Nome da Loja -->
+                <label for="nomeLoja">Nome da Loja*</label>
+                <input type="text" id="nomeLoja" name="nomeLoja" required>
+            
+                <!-- CNPJ -->
+                <label for="cnpj">CNPJ*</label>
+                <input type="text" id="cnpj" name="cnpj" required oninput="mascaraCNPJ(this)">
+            
+                <!-- Nome do Responsável -->
+                <label for="responsavel">Nome do Responsável*</label>
+                <input type="text" id="responsavel" name="responsavel" required>
+            
+                <!-- Telefone/WhatsApp -->
+                <label for="telefone">Telefone/WhatsApp*</label>
+                <input type="text" id="telefone" name="telefone" required oninput="mascaraTelefone(this)">
+            
+                <!-- E-mail -->
+                <label for="email">E-mail*</label>
+                <input type="email" id="email" name="email" required>
+            
+                <!-- Redes Sociais -->
+                <label for="redesSociais">Redes Sociais da Loja (Instagram, Facebook, etc.)</label>
+                <input type="text" id="redesSociais" name="redesSociais">
+            
+                <!-- Endereço Completo -->
+                <label for="endereco">Endereço Completo*</label>
+                <input type="text" id="endereco" name="endereco" required>
+            
+                <!-- Tempo de Mercado -->
+                <label>Tempo de Mercado*</label>
+                <div>
+                    <input type="radio" id="menosDe6Meses" name="tempoMercado" value="menosDe6Meses" required>
+                    <label for="menosDe6Meses">Menos de 6 meses</label>
+                </div>
+                <div>
+                    <input type="radio" id="6MesesA1Ano" name="tempoMercado" value="6MesesA1Ano" required>
+                    <label for="6MesesA1Ano">6 meses a 1 ano</label>
+                </div>
+                <div>
+                    <input type="radio" id="1a3Anos" name="tempoMercado" value="1a3Anos" required>
+                    <label for="1a3Anos">1 a 3 anos</label>
+                </div>
+                <div>
+                    <input type="radio" id="3a5Anos" name="tempoMercado" value="3a5Anos" required>
+                    <label for="3a5Anos">3 a 5 anos</label>
+                </div>
+                <div>
+                    <input type="radio" id="maisDe5Anos" name="tempoMercado" value="maisDe5Anos" required>
+                    <label for="maisDe5Anos">Mais de 5 anos</label>
+                </div>
+            
+                <!-- Tipo de Loja -->
+                <label>Possui loja física, online ou ambas?*</label>
+                <div>
+                    <input type="radio" id="lojaFisica" name="tipoLoja" value="lojaFisica" required>
+                    <label for="lojaFisica">Loja física</label>
+                </div>
+                <div>
+                    <input type="radio" id="lojaOnline" name="tipoLoja" value="lojaOnline" required>
+                    <label for="lojaOnline">Loja online</label>
+                </div>
+                <div>
+                    <input type="radio" id="ambas" name="tipoLoja" value="ambas" required>
+                    <label for="ambas">Ambas</label>
+                </div>
+            
+                <!-- Tipos de Produtos -->
+                <label>Quais tipos de produtos sua loja vende atualmente?*</label>
+                <div>
+                    <input type="radio" id="modaCountry" name="produtos" value="modaCountry" required>
+                    <label for="modaCountry">Moda country (roupas)</label>
+                </div>
+                <div>
+                    <input type="radio" id="botaCalcado" name="produtos" value="botaCalcado" required>
+                    <label for="botaCalcado">Botas e calçados</label>
+                </div>
+                <div>
+                    <input type="radio" id="acessorios" name="produtos" value="acessorios" required>
+                    <label for="acessorios">Acessórios (cintos, chapéus, fivelas, etc.)</label>
+                </div>
+                <div>
+                    <input type="radio" id="outros" name="produtos" value="outros" required>
+                    <label for="outros">Outros</label>
+                </div>
+                <div id="outrosBox" style="display:none;">
+                    <label for="outrosDescricao">Especifique:</label>
+                    <input type="text" id="outrosDescricao" name="outrosDescricao">
+                </div>
+            
+                <!-- Marcas que revende -->
+                <label for="marcas">Principais marcas que revende hoje*</label>
+                <input type="text" id="marcas" name="marcas" required>
+            
+                <!-- Forma de Pagamento -->
+                <label>Forma de pagamento preferida*</label>
+                <div>
+                    <input type="radio" id="boleto" name="formaPagamento" value="boleto" required>
+                    <label for="boleto">Boleto</label>
+                </div>
+                <div>
+                    <input type="radio" id="cartaoCredito" name="formaPagamento" value="cartaoCredito" required>
+                    <label for="cartaoCredito">Cartão de crédito</label>
+                </div>
+                <div>
+                    <input type="radio" id="pix" name="formaPagamento" value="pix" required>
+                    <label for="pix">PIX</label>
+                </div>
+                <div>
+                    <input type="radio" id="consignacao" name="formaPagamento" value="consignacao" required>
+                    <label for="consignacao">Consignação</label>
+                </div>
+            
+                <!-- Como conheceu a NFR -->
+                <label for="comoConheceu">Como conheceu a NFR?*</label>
+                <input type="text" id="comoConheceu" name="comoConheceu" required>
+            
+                <!-- Por que quer revender a NFR -->
+                <label for="porqueRevender">Por que quer revender a NFR?*</label>
+                <input type="text" id="porqueRevender" name="porqueRevender" required>
+            
+                <!-- Mensagem ou observações adicionais -->
+                <label for="observacoes">Mensagem ou observações adicionais</label>
+                <textarea id="observacoes" name="observacoes"></textarea>
+            
+                <!-- Enviar -->
+                <button type="submit">Enviar Formulário</button>
+            </form>
+            
+        </div>
+        
+        
+        
+    </div>
+
+
+    <script>
+        function mascaraCNPJ(cnpj) {
+            var cnpjFormatado = cnpj.value.replace(/\D/g, ''); // Remove tudo o que não é número
+            
+            // Limita o número de caracteres a 14
+            if (cnpjFormatado.length > 14) {
+                cnpjFormatado = cnpjFormatado.slice(0, 14);
+            }
+            
+            // Aplica a máscara de CNPJ
+            if (cnpjFormatado.length <= 14) {
+                cnpjFormatado = cnpjFormatado.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
+            }
+            
+            cnpj.value = cnpjFormatado; // Atualiza o valor do campo
+        }
+
+
+
+
+        function mascaraTelefone(telefone) {
+            var telefoneFormatado = telefone.value.replace(/\D/g, ''); // Remove tudo o que não é número
+            
+            // Limita o número de caracteres a 11
+            if (telefoneFormatado.length > 11) {
+                telefoneFormatado = telefoneFormatado.slice(0, 11);
+            }
+            
+            // Aplica a máscara de telefone
+            if (telefoneFormatado.length <= 11) {
+                if (telefoneFormatado.length <= 10) {
+                    telefoneFormatado = telefoneFormatado.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3'); // Para telefone fixo
+                } else {
+                    telefoneFormatado = telefoneFormatado.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3'); // Para celular
+                }
+            }
+            
+            telefone.value = telefoneFormatado; // Atualiza o valor do campo
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        document.getElementById('outros').addEventListener('change', function() {
+            document.getElementById('outrosBox').style.display = 'block';
+        });
+        
+        // Esconde a caixa quando outra opção for selecionada
+        document.querySelectorAll('input[name="produtos"]').forEach(item => {
+            item.addEventListener('change', function() {
+                if (this.id !== 'outros') {
+                    document.getElementById('outrosBox').style.display = 'none';
+                }
+            });
+        });
+        
+        const script_do_google = 'https://script.google.com/macros/s/AKfycbwONNIVeUkRmFXmNXAtgPh-pYcBrBH6VmXe_qqSNCXkGGHNg1O9Y07-YXjsEWPvss-0/exec';
+        const dados_do_formulario = document.forms['formulario-contato'];
+        
+        dados_do_formulario.addEventListener('submit', function(e) {
+            e.preventDefault(); // Previne o recarregamento da página
+        
+            fetch(script_do_google, {
+                method: 'POST',
+                body: new FormData(dados_do_formulario),
+            })
+            .then(response => response.text()) // Converte a resposta para texto
+            .then(data => {
+                alert('Dados enviados com sucesso! Resposta do servidor: ' + data);
+                dados_do_formulario.reset();
+            })
+            .catch(error => {
+                console.error('Erro no envio dos dados:', error);
+                alert('Erro ao enviar os dados. Tente novamente.');
+            });
+        });
+        
+
+
+
+
+
+    </script>
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
